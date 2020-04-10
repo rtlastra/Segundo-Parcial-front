@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./Estilos/style2.css">
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-firestore.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyDut8KYvDlb7TCWPq6xWDalIZBmYvWd9CQ",
+            authDomain: "parcial-front-9c3bc.firebaseapp.com",
+            databaseURL: "https://parcial-front-9c3bc.firebaseio.com",
+            projectId: "parcial-front-9c3bc",
+            storageBucket: "parcial-front-9c3bc.appspot.com",
+            messagingSenderId: "633861805982",
+            appId: "1:633861805982:web:a206428d8fa000bf3c688f"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+    </script>
+    <script src="app.js"></script>
+    <script>
+         obs();
+    </script>
+    
+    <title>Operadores</title>
+</head>
+
+<body>
+    <div class="background"></div>
+    <h2>Gasoducto del Caribe</h2>
+    <div id="principal">
+        <div class="pc-tab">
+            <input checked="checked" id="tab1" type="radio" name="pct" />
+            <input id="tab2" type="radio" name="pct" />
+            <nav>
+                <ul>
+                    <li class="tab1">
+                        <label for="tab1" id="lab">Registrar Operador</label>
+                    </li>
+                    <li class="tab2">
+                        <label for="tab2" id="lab">Lista de Operadores</label>
+                    </li>
+                </ul>
+            </nav>
+            <section>
+                <div class="tab1">
+                    <div id="contenedor1">
+                        <div id="class1">
+                            <input type="text" id="1" class="fadeIn second" name="Usuario" placeholder="Nombre">
+                            <input type="text" id="2" class="fadeIn second" name="Usuario" placeholder="Email">
+                            <input type="password" id="3" class="fadeIn third" name="login"
+                                placeholder="Contraseña">
+                            <input type="text" id="4" class="fadeIn second" name="Usuario"
+                                placeholder="Dirección">
+                        </div>
+                        <div id="class2">
+                            <div id="image">
+                                <img src="./Imagenes/7.png">
+                            </div>
+                        </div>
+                    </div>
+                    <a id="pk" href="#" onclick="registerOp()">Registrar</a>
+
+                </div>
+                <div class="tab2">
+                    <div id="contenedor">
+                        <div id="section">
+                            <select id="lista" multiple>
+                                
+                              
+                            </select>
+                        </div>
+                        <a id="pk" href="#" onclick="listar()">Listar</a>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+
+        
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+            integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+            crossorigin="anonymous"></script>
+    </div>
+
+</body>
+
+</html>

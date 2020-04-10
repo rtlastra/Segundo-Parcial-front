@@ -1,0 +1,207 @@
+html {
+    background-color: #56baed;
+  }
+body {
+    font-family: "Lato",sans-serif;
+    min-height: 100vh;
+    background-image: url('../Imagenes/8.jpg');
+    background-size: cover;
+    
+  }
+  
+  p {
+    opacity: 0.8;
+  }
+  h2{
+    padding: 40px;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+  }
+  #pk{
+    padding-top: 40px;
+    text-align: center;
+    color: black;
+  }
+  #pk2{
+    color: black;
+    margin: 0 12px;
+  }
+  #pk3 {
+    background-color: #56baed;
+    border: 0;
+    color: white;
+    cursor: pointer;
+    border-radius: 20px;
+    margin-bottom: 0;
+    width: 100%;
+    font-size: 20px;
+    padding: 8px;
+    padding-right: 57px;
+    padding-left: 57px;
+    text-decoration: none;
+    text-align: center;
+  }
+  #button{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  input [type="submit"] :hover{
+    opacity: 1;
+  }
+  input [type="submit"]:active{
+    transform: scale(0.95);
+  }
+ 
+  
+  input[type=text],[type=password] {
+    background-color: #f6f6f6;
+    border: none;
+    color: #0d0d0d;
+    padding: 10px;
+    text-decoration: none;
+    display: block;
+    font-size: 16px;
+    margin-left: 10%;
+    margin-bottom: 8%;
+    width: 80%;
+    border-radius: 5px 5px 5px 5px;
+  
+  }
+
+  input[type=text],[type=password]:placeholder {
+    color: #cccccc;
+  }
+ #principal{
+     margin: auto;
+     width: 100%;
+     max-width: 900px;
+     background-color: rgba(255,255,255,0.6);
+     border-radius: 15px;
+     padding: 30px;
+     padding-bottom: 15px;  
+     height: 500px;
+     
+ }
+ .pc-tab > input,
+ .pc-tab section > div {
+   display: none;
+ }
+
+ #tab1:checked ~ section .tab1,
+ #tab2:checked ~ section .tab2{
+   display:block;
+ }
+
+ .pc-tab ul {
+   list-style-type: none;
+   margin: 0;
+   padding: 0;
+ }
+ .pc-tab ul li label{
+   text-align: center;
+   float: left;
+   padding-right: 3%;
+   padding-left: 3%;
+   padding-top: 0.5%;
+   padding-bottom: 0.5%;
+   margin-bottom: 3%;
+   margin-left: 16%;
+   border-bottom: 0;
+   color: #67605E;
+   border-radius: 25px;
+   font-size: 19px;
+ }
+ #lab:hover{
+   background-color: #ddd;
+   opacity: 0.7;
+ }
+ #lab:active{
+   background-color: #fff;
+ }
+ #tab1:checked ~ nav .tab1 label,
+ #tab2:checked ~ nav .tab2 label{
+  color:black;
+  position: relative;
+  font-weight: bold;
+ }
+ #remember{
+   width: 16px;
+   height: 16px;
+ }
+ #check{
+   display: flex;
+   align-items: center;
+   margin-bottom: 30px;
+ }
+  
+#contenedor{
+  width: 100%;
+  height: 200px;
+    border-radius: 15px;
+    opacity: 1;  
+}
+#contenedor1{
+  width: 100%;
+  height: 320px;
+  border-radius: 15px;
+  display: flex;
+  margin: auto;
+  
+}
+#section{
+  overflow: auto;
+  height: 100%;
+  border-radius: 10px;
+  width: 100%;
+  height: 310px;
+  margin-bottom: 14px;
+  
+}
+#lista{ 
+  font-family:"Lato",sans-serif; 
+  font-size:21px; 
+  display:block; 
+  width:100%; 
+  height:100%; 
+  text-decoration:none;
+  color:black;
+  border: 0 white;
+}
+#lista option{
+  padding: 20px;
+  border-radius: 9px;
+  margin-top: 10px;
+  opacity: 0.6;
+
+  
+}
+#lista option:hover { 
+  background-color:#56baed ;
+  opacity: 0.2;
+
+}
+#pk{
+  background-color: #56baed;
+  border: 0;
+  color: white;
+  border-radius: 20px;
+  font-size: 18px;
+  margin-left: 620px;
+  padding: 12px;
+  padding-left: 30px;
+  padding-right: 30px;
+  text-decoration: none;
+}
+#class1{
+  width: 50%;
+  height: 100%;
+}
+
+#class2{
+  width: 50px;
+  height: 100%;
+  margin-left: 19%;
+}
+

@@ -1,0 +1,141 @@
+[debug] [2020-04-09T19:48:07.692Z] ----------------------------------------------------------------------
+[debug] [2020-04-09T19:48:07.694Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Rafael Lastra\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve
+[debug] [2020-04-09T19:48:07.695Z] CLI Version:   7.14.0
+[debug] [2020-04-09T19:48:07.695Z] Platform:      win32
+[debug] [2020-04-09T19:48:07.695Z] Node Version:  v13.6.0
+[debug] [2020-04-09T19:48:07.696Z] Time:          Thu Apr 09 2020 14:48:07 GMT-0500 (Colombia Standard Time)
+[debug] [2020-04-09T19:48:07.696Z] ----------------------------------------------------------------------
+[debug] [2020-04-09T19:48:07.696Z] 
+[debug] [2020-04-09T19:48:07.705Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-04-09T19:48:07.706Z] > authorizing via signed-in user
+[debug] [2020-04-09T19:48:07.706Z] [iam] checking project parcial-front-9c3bc for permissions ["firebase.projects.get"]
+[debug] [2020-04-09T19:48:07.708Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2020-04-09T19:48:07.708Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2020-04-09T19:48:08.022Z] <<< HTTP RESPONSE 200
+[debug] [2020-04-09T19:48:08.028Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/parcial-front-9c3bc:testIamPermissions  
+
+[debug] [2020-04-09T19:48:08.749Z] <<< HTTP RESPONSE 200
+[debug] [2020-04-09T19:48:08.751Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/parcial-front-9c3bc  
+ 
+[debug] [2020-04-09T19:48:09.272Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\Users\Rafael Lastra\Desktop\Parcial1-front'...
+[info] 
+[debug] [2020-04-09T19:48:09.277Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/parcial-front-9c3bc/webApps/-/config  
+ 
+[debug] [2020-04-09T19:48:10.051Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: public
+[info] +  hosting: Local server: http://localhost:5000
+[debug] [2020-04-09T20:44:47.883Z] ----------------------------------------------------------------------
+[debug] [2020-04-09T20:44:47.886Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Rafael Lastra\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve
+[debug] [2020-04-09T20:44:47.886Z] CLI Version:   7.14.0
+[debug] [2020-04-09T20:44:47.886Z] Platform:      win32
+[debug] [2020-04-09T20:44:47.886Z] Node Version:  v13.6.0
+[debug] [2020-04-09T20:44:47.887Z] Time:          Thu Apr 09 2020 15:44:47 GMT-0500 (Colombia Standard Time)
+[debug] [2020-04-09T20:44:47.887Z] ----------------------------------------------------------------------
+[debug] [2020-04-09T20:44:47.887Z] 
+[debug] [2020-04-09T20:44:47.895Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-04-09T20:44:47.896Z] > authorizing via signed-in user
+[debug] [2020-04-09T20:44:47.896Z] [iam] checking project parcial-front-9c3bc for permissions ["firebase.projects.get"]
+[debug] [2020-04-09T20:44:47.897Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2020-04-09T20:44:47.897Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2020-04-09T20:44:48.241Z] <<< HTTP RESPONSE 200
+[debug] [2020-04-09T20:44:48.255Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/parcial-front-9c3bc:testIamPermissions  
+
+[debug] [2020-04-09T20:44:49.216Z] <<< HTTP RESPONSE 200
+[debug] [2020-04-09T20:44:49.218Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/parcial-front-9c3bc  
+ 
+[debug] [2020-04-09T20:44:49.715Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\Users\Rafael Lastra\Desktop\Parcial1-front'...
+[info] 
+[debug] [2020-04-09T20:44:49.718Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/parcial-front-9c3bc/webApps/-/config  
+ 
+[debug] [2020-04-09T20:44:50.534Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: public
+[info] +  hosting: Local server: http://localhost:5000
+[debug] [2020-04-09T21:22:04.120Z] ----------------------------------------------------------------------
+[debug] [2020-04-09T21:22:04.123Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Rafael Lastra\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve
+[debug] [2020-04-09T21:22:04.123Z] CLI Version:   7.14.0
+[debug] [2020-04-09T21:22:04.123Z] Platform:      win32
+[debug] [2020-04-09T21:22:04.123Z] Node Version:  v13.6.0
+[debug] [2020-04-09T21:22:04.124Z] Time:          Thu Apr 09 2020 16:22:04 GMT-0500 (Colombia Standard Time)
+[debug] [2020-04-09T21:22:04.124Z] ----------------------------------------------------------------------
+[debug] [2020-04-09T21:22:04.125Z] 
+[debug] [2020-04-09T21:22:04.133Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-04-09T21:22:04.134Z] > authorizing via signed-in user
+[debug] [2020-04-09T21:22:04.134Z] [iam] checking project parcial-front-9c3bc for permissions ["firebase.projects.get"]
+[debug] [2020-04-09T21:22:04.135Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/parcial-front-9c3bc:testIamPermissions  
+
+[debug] [2020-04-09T21:22:05.096Z] <<< HTTP RESPONSE 200
+[debug] [2020-04-09T21:22:05.098Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/parcial-front-9c3bc  
+ 
+[debug] [2020-04-09T21:22:05.523Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\Users\Rafael Lastra\Desktop\Parcial1-front'...
+[info] 
+[debug] [2020-04-09T21:22:05.527Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/parcial-front-9c3bc/webApps/-/config  
+ 
+[debug] [2020-04-09T21:22:06.020Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: public
+[info] +  hosting: Local server: http://localhost:5000
+[debug] [2020-04-10T09:02:21.306Z] ----------------------------------------------------------------------
+[debug] [2020-04-10T09:02:21.308Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Rafael Lastra\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve
+[debug] [2020-04-10T09:02:21.308Z] CLI Version:   7.14.0
+[debug] [2020-04-10T09:02:21.309Z] Platform:      win32
+[debug] [2020-04-10T09:02:21.309Z] Node Version:  v13.6.0
+[debug] [2020-04-10T09:02:21.310Z] Time:          Fri Apr 10 2020 04:02:21 GMT-0500 (Colombia Standard Time)
+[debug] [2020-04-10T09:02:21.310Z] ----------------------------------------------------------------------
+[debug] [2020-04-10T09:02:21.310Z] 
+[debug] [2020-04-10T09:02:21.317Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-04-10T09:02:21.318Z] > authorizing via signed-in user
+[debug] [2020-04-10T09:02:21.318Z] [iam] checking project parcial-front-9c3bc for permissions ["firebase.projects.get"]
+[debug] [2020-04-10T09:02:21.320Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2020-04-10T09:02:21.320Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2020-04-10T09:02:21.715Z] <<< HTTP RESPONSE 200
+[debug] [2020-04-10T09:02:21.722Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/parcial-front-9c3bc:testIamPermissions  
+
+[debug] [2020-04-10T09:02:22.476Z] <<< HTTP RESPONSE 200
+[debug] [2020-04-10T09:02:22.477Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/parcial-front-9c3bc  
+ 
+[debug] [2020-04-10T09:02:22.988Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\Users\Rafael Lastra\Desktop\Parcial1-front'...
+[info] 
+[debug] [2020-04-10T09:02:22.992Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/parcial-front-9c3bc/webApps/-/config  
+ 
+[debug] [2020-04-10T09:02:23.647Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: public
+[info] +  hosting: Local server: http://localhost:5000
+[debug] [2020-04-10T19:44:04.613Z] ----------------------------------------------------------------------
+[debug] [2020-04-10T19:44:04.616Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Rafael Lastra\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve
+[debug] [2020-04-10T19:44:04.617Z] CLI Version:   7.14.0
+[debug] [2020-04-10T19:44:04.617Z] Platform:      win32
+[debug] [2020-04-10T19:44:04.617Z] Node Version:  v13.6.0
+[debug] [2020-04-10T19:44:04.633Z] Time:          Fri Apr 10 2020 14:44:04 GMT-0500 (Colombia Standard Time)
+[debug] [2020-04-10T19:44:04.633Z] ----------------------------------------------------------------------
+[debug] [2020-04-10T19:44:04.633Z] 
+[debug] [2020-04-10T19:44:04.652Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-04-10T19:44:04.653Z] > authorizing via signed-in user
+[debug] [2020-04-10T19:44:04.653Z] [iam] checking project parcial-front-9c3bc for permissions ["firebase.projects.get"]
+[debug] [2020-04-10T19:44:04.655Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2020-04-10T19:44:04.655Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2020-04-10T19:44:05.045Z] <<< HTTP RESPONSE 200
+[debug] [2020-04-10T19:44:05.051Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/parcial-front-9c3bc:testIamPermissions  
+
+[debug] [2020-04-10T19:44:05.788Z] <<< HTTP RESPONSE 200
+[debug] [2020-04-10T19:44:05.789Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/parcial-front-9c3bc  
+ 
+[debug] [2020-04-10T19:44:06.310Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\Users\Rafael Lastra\Desktop\Parcial1-front'...
+[info] 
+[debug] [2020-04-10T19:44:06.325Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/parcial-front-9c3bc/webApps/-/config  
+ 
+[debug] [2020-04-10T19:44:07.011Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: public
+[info] +  hosting: Local server: http://localhost:5000

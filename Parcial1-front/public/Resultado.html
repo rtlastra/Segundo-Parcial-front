@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./Estilos/style4.css">
+    <title>Resultados</title>
+     <!-- The core Firebase JS SDK is always required and must be listed first -->
+     <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-app.js"></script>
+     <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-auth.js"></script>
+ 
+     <!-- TODO: Add SDKs for Firebase products that you want to use
+      https://firebase.google.com/docs/web/setup#available-libraries -->
+     <script>
+         // Your web app's Firebase configuration
+         var firebaseConfig = {
+             apiKey: "AIzaSyDut8KYvDlb7TCWPq6xWDalIZBmYvWd9CQ",
+             authDomain: "parcial-front-9c3bc.firebaseapp.com",
+             databaseURL: "https://parcial-front-9c3bc.firebaseio.com",
+             projectId: "parcial-front-9c3bc",
+             storageBucket: "parcial-front-9c3bc.appspot.com",
+             messagingSenderId: "633861805982",
+             appId: "1:633861805982:web:a206428d8fa000bf3c688f"
+         };
+         // Initialize Firebase
+         firebase.initializeApp(firebaseConfig);
+     </script>
+    <script src="app.js"></script>
+    <script>
+        obs();
+    </script>
+</head>
+
+<body>
+    <main>
+        <h2>Resultados</h2>
+        <div id="container">
+            <div id="image">
+                <img src="./Imagenes/7.png">
+                <h3>Operador X</h3>
+            </div>
+            <div id="prueba">
+                <div id="prueba2">
+                    <div id="interno1">
+                        <h4>Nombre del examen:</h4>
+                        <h4>Duración del examen:</h4>
+                        <h4>Puntos posibles:</h4>
+                        <h4>Calificación calculada:</h4>
+                    </div>
+                    <div id="interno2">
+                        <p>xxxxxxxxxxxxxxx</p>
+                        <p>xxxxxxxxxxxxxxx</p>
+                        <p>xxxxxxxxxxxxxxx</p>
+                        <p>xxxxxxxxxxxxxxx</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a id="pk" href="./index.html">Finalizar</a>
+    </main>
+</body>
+
+</html>
