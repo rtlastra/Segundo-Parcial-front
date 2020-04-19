@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./Estilos/style2.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-auth.js"></script>
@@ -29,19 +33,39 @@
     </script>
     <script src="app.js"></script>
     <script>
-         obs();
+        obs();
     </script>
-    
+
     <title>Operadores</title>
+    
 </head>
 
 <body>
-    <div class="background"></div>
-    <h2>Gasoducto del Caribe</h2>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" style="margin-bottom: 45px;">
+        <a class="navbar-brand" href="#" id="prob"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#"><span class="sr-only">(current)</span></a>
+            </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <button class="btn btn-outline-danger my-2 my-sm-0" onclick="signout()" type="submit">Cerrar sesión</button>
+          </form>
+        </div>
+      </nav>
+      
+
+       <div class="background"></div>
     <div id="principal">
         <div class="pc-tab">
             <input checked="checked" id="tab1" type="radio" name="pct" />
             <input id="tab2" type="radio" name="pct" />
+            <input id="tab3" type="radio" name="pct" />
             <nav>
                 <ul>
                     <li class="tab1">
@@ -50,18 +74,22 @@
                     <li class="tab2">
                         <label for="tab2" id="lab">Lista de Operadores</label>
                     </li>
+                    <li class="tab3">
+                        <label for="tab3" id="lab">Crear Cuestionario</label>
+                    </li>
                 </ul>
             </nav>
             <section>
                 <div class="tab1">
                     <div id="contenedor1">
                         <div id="class1">
-                            <input type="text" id="1" class="fadeIn second" name="Usuario" placeholder="Nombre">
-                            <input type="text" id="2" class="fadeIn second" name="Usuario" placeholder="Email">
-                            <input type="password" id="3" class="fadeIn third" name="login"
-                                placeholder="Contraseña">
-                            <input type="text" id="4" class="fadeIn second" name="Usuario"
-                                placeholder="Dirección">
+                            <form onsubmit="registerOp()">
+                            <input type="text" id="1" class="fadeIn second" name="Usuario" placeholder="Nombre" required/>
+                            <input type="text" id="2" class="fadeIn second" name="Usuario" placeholder="Email" required/>
+                            <input type="password" id="3" class="fadeIn third" name="login" placeholder="Contraseña" required/>
+                            <input type="text" id="4" class="fadeIn second" name="Usuario" placeholder="Dirección"required/>
+                            <button type="submit"  id="pk" href="#">Registrar</button>
+                        </form>
                         </div>
                         <div id="class2">
                             <div id="image">
@@ -69,36 +97,126 @@
                             </div>
                         </div>
                     </div>
-                    <a id="pk" href="#" onclick="registerOp()">Registrar</a>
-
                 </div>
                 <div class="tab2">
                     <div id="contenedor">
                         <div id="section">
                             <select id="lista" multiple>
-                                
-                              
                             </select>
                         </div>
-                        <a id="pk" href="#" onclick="listar()">Listar</a>
+                        <a id="pk2" href="#" onclick="Deleteop()">Eliminar Operador</a>
+                        <a id="pk2" href="#"  data-toggle="modal" data-target="#exampleModal">Editar</a>
                     </div>
                 </div>
+                <div class="tab3">
+                    <div id="contenedor2">
+                        <div id="container">
+                            <div class="tabbable tabs-left left-tab-process" style="margin-bottom:25px;">
+                                <ul class="nav nav-tabs book-process-ltab text-center">
+                                    <li class=""><a href="#a" data-toggle="tab" id="mod">1</a></li>
+                                    <li class=""><a href="#b" data-toggle="tab" id="mod">2</a></li>
+                                    <li class=""><a href="#c" data-toggle="tab" id="mod">3</a></li>
+                                    <li class=""><a href="#d" data-toggle="tab" id="mod">4</a></li>
+                                    <li class=""><a href="#e" data-toggle="tab" id="mod">5</a></li>
+                                </ul>
+                                <div class="tab-content">
+                                    <div class="tab-pane active" id="a">
+                                        <textarea class="quest" id="quest1"
+                                            placeholder="Descripción de la pregunta"></textarea>
+                                        <input class="resp" type="text" id="resp1" class="fadeIn second" name="resp"
+                                            placeholder="Opcion A">
+                                        <input class="resp" type="text" id="resp2" class="fadeIn second" name="resp"
+                                            placeholder="Opcion b">
+                                        <input class="resp" type="text" id="resp3" class="fadeIn second" name="resp"
+                                            placeholder="Opcion c">
+                                    </div>
+                                    <div class="tab-pane" id="b">
+                                        <div class="tab-pane">
+                                            <textarea class="quest" id="quest2"
+                                                placeholder="Descripción de la pregunta"></textarea>
+                                            <input class="resp" type="text" id="resp4" class="fadeIn second" name="resp"
+                                                placeholder="Opcion A">
+                                            <input class="resp" type="text" id="resp5" class="fadeIn second" name="resp"
+                                                placeholder="Opcion b">
+                                            <input class="resp" type="text" id="resp6" class="fadeIn second" name="resp"
+                                                placeholder="Opcion c">
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" id="c">
+                                        <textarea class="quest" id="quest3"
+                                            placeholder="Descripción de la pregunta"></textarea>
+                                        <input class="resp" type="text" id="resp7" class="fadeIn second" name="resp"
+                                            placeholder="Opcion A">
+                                        <input class="resp" type="text" id="resp8" class="fadeIn second" name="resp"
+                                            placeholder="Opcion b">
+                                        <input class="resp" type="text" id="resp9" class="fadeIn second" name="resp"
+                                            placeholder="Opcion c">
+                                    </div>
+                                    <div class="tab-pane" id="d">
+                                        <textarea class="quest" id="quest4"
+                                            placeholder="Descripción de la pregunta"></textarea>
+                                        <input class="resp" type="text" id="resp10" class="fadeIn second" name="resp"
+                                            placeholder="Opcion A">
+                                        <input class="resp" type="text" id="resp11" class="fadeIn second" name="resp"
+                                            placeholder="Opcion b">
+                                        <input class="resp" type="text" id="resp12" class="fadeIn second" name="resp"
+                                            placeholder="Opcion c">
+                                    </div>
+                                    <div class="tab-pane" id="e">
+                                        <textarea class="quest" id="quest5"
+                                            placeholder="Descripción de la pregunta"></textarea>
+                                        <input class="resp" type="text" id="resp13" class="fadeIn second" name="resp"
+                                            placeholder="Opcion A">
+                                        <input class="resp" type="text" id="resp14" class="fadeIn second" name="resp"
+                                            placeholder="Opcion b">
+                                        <input class="resp" type="text" id="resp15" class="fadeIn second" name="resp"
+                                            placeholder="Opcion c">
+                                    </div>
+                                </div>
+
+                            </div>
+                            <a id="pk" href="#" onclick="preguntas()">Enviar</a>
+                        </div>
+                    </div>
             </section>
         </div>
 
-
-        
-        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-            integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-            crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-            crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-            crossorigin="anonymous"></script>
     </div>
 
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Editar</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <input type="text" id="edit1" class="fadeIn second" name="resp"placeholder="Nombre">
+                    <input type="text" id="edit2" class="fadeIn second" name="resp"placeholder="Email">
+                    <input type="text" id="edit3" class="fadeIn second" name="resp"placeholder="Contraseña">
+                    <input type="text" id="edit4" class="fadeIn second" name="resp"placeholder="Dirección">
+                                        
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                    <button type="button"onclick="edit()" class="btn btn-primary">Guardar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>
