@@ -5,12 +5,53 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./Estilos/style3.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-firestore.js"></script>
     <title>Cuestionario</title>
+    <script src="app.js"></script>
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyDut8KYvDlb7TCWPq6xWDalIZBmYvWd9CQ",
+            authDomain: "parcial-front-9c3bc.firebaseapp.com",
+            databaseURL: "https://parcial-front-9c3bc.firebaseio.com",
+            projectId: "parcial-front-9c3bc",
+            storageBucket: "parcial-front-9c3bc.appspot.com",
+            messagingSenderId: "633861805982",
+            appId: "1:633861805982:web:a206428d8fa000bf3c688f"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+
+        config();
+    </script>
+   
 </head>
 
 <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" style="margin-bottom: 45px;">
+        <a class="navbar-brand" href="#" id="prob"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#"><span class="sr-only">(current)</span></a>
+            </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <button class="btn btn-outline-danger my-2 my-sm-0" onclick="close()" type="submit">Cerrar sesión</button>
+          </form>
+        </div>
+      </nav>
+
     <div id="container">
-        <h2>Cuestionario</h2>
         <main id="main">
             <div class="pc-tab">
                 <input checked="checked" id="tab1" type="radio" name="pct" />
@@ -39,152 +80,101 @@
                 </nav>
                 <section id="pk">
                     <div class="tab1">
-                        <div class="question">
-                            <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur pellentesque euismod
-                                lectus
-                                ut scelerisque. Donec vel sapien id nunc sollicitudin dapibus quis eu sem. Etiam eget
-                                ante
-                                vel
-                                velit tristique rhoncus?</h4>
+                        <div class="question" id ="question1">
+                            <h4> </h4>
                         </div>
                         <form action="#">
                             <p>
-                                <input type="radio" id="test1" name="radio-group" checked>
-                                <label for="test1">In tincidunt, ipsum ut sodales commodo, neque dui rutrum diam, vitae
-                                    tempor tellus erat sit amet ipsum.</label>
+                                <input type="radio" id="test1" name="radio-group" >
+                                <label id="p11" for="test1"></label>
                             </p>
                             <p>
                                 <input type="radio" id="test2" name="radio-group">
-                                <label for="test2">Vivamus egestas molestie neque, tempor imperdiet ligula rutrum
-                                    at.</label>
+                                <label id="p12" for="test2"></label>
                             </p>
                             <p>
                                 <input type="radio" id="test3" name="radio-group">
-                                <label for="test3">Curabitur ac tristique quam.</label>
-                            </p>
-                            <p>
-                                <input type="radio" id="test4" name="radio-group" checked>
-                                <label for="test4">Quisque molestie ultricies libero, vitae gravida nibh dignissim
-                                    quis.</label>
+                                <label id="p13" for="test3"></label>
                             </p>
                         </form>
                     </div>
                     <div class="tab2">
-                        <div class="question">
-                            <h4>Nullam viverra sodales aliquam. Quisque vel laoreet dolor, a eleifend lectus. Nulla
-                                facilisi. Praesent a bibendum mi, a cursus mi. Maecenas feugiat eros risus, ac mattis
-                                ipsum
-                                lobortis in. Fusce et interdum nisi. Donec ut diam risus. Vivamus id lobortis est.
-                                Nullam
-                                efficitur sit amet augue quis ultricies. Fusce in sem ultricies, egestas justo non,
-                                viverra
-                                orci?</h4>
+                        <div class="question" id ="question2">
+                            <h4></h4>
                         </div>
                         <form action="#">
                             <p>
-                                <input type="radio" id="test5" name="radio-group" checked>
-                                <label for="test5">In tincidunt, ipsum ut sodales commodo, neque dui rutrum diam, vitae
-                                    tempor tellus erat sit amet ipsum.</label>
+                                <input type="radio" id="test5" name="radio-group" >
+                                <label id="p21"for="test5"></label>
                             </p>
                             <p>
                                 <input type="radio" id="test6" name="radio-group">
-                                <label for="test6">Vivamus egestas molestie neque, tempor imperdiet ligula rutrum
-                                    at.</label>
+                                <label id="p22" for="test6"></label>
                             </p>
                             <p>
                                 <input type="radio" id="test7" name="radio-group">
-                                <label for="test7">Curabitur ac tristique quam.</label>
+                                <label id="p23" for="test7"></label>
                             </p>
-                            <p>
-                                <input type="radio" id="test8" name="radio-group" checked>
-                                <label for="test8">Quisque molestie ultricies libero, vitae gravida nibh dignissim
-                                    quis.</label>
-                            </p>
+
                         </form>
                     </div>
                     <div class="tab3">
-                        <div class="question">
-                            <h4>Vivamus egestas molestie neque, tempor imperdiet ligula rutrum at. Nunc maximus semper
-                                ipsum?</h4>
+                        <div class="question" id ="question3">
+                            <h4></h4>
                         </div>
                         <form action="#">
                             <p>
-                                <input type="radio" id="test9" name="radio-group" checked>
-                                <label for="test9">In tincidunt, ipsum ut sodales commodo, neque dui rutrum diam, vitae
-                                    tempor tellus erat sit amet ipsum.</label>
+                                <input type="radio" id="test9" name="radio-group" >
+                                <label id="p31" for="test9"></label>
                             </p>
                             <p>
                                 <input type="radio" id="test10" name="radio-group">
-                                <label for="test10">Vivamus egestas molestie neque, tempor imperdiet ligula rutrum
-                                    at.</label>
+                                <label id="p32" for="test10"></label>
                             </p>
                             <p>
                                 <input type="radio" id="test11" name="radio-group">
-                                <label for="test11">Curabitur ac tristique quam.</label>
+                                <label id="p33" for="test11"></label>
                             </p>
-                            <p>
-                                <input type="radio" id="test12" name="radio-group" checked>
-                                <label for="test12">Quisque molestie ultricies libero, vitae gravida nibh dignissim
-                                    quis.</label>
-                            </p>
+
                         </form>
                     </div>
                     <div class="tab4">
-                        <div class="question">
-                            <h4>Curabitur ac tristique quam. Suspendisse dignissim nibh dapibus mi consectetur, quis
-                                congue
-                                massa luctus. Curabitur neque justo, imperdiet at mauris in, convallis scelerisque eros?
+                        <div class="question" id ="question4">
+                            <h4>
                             </h4>
                         </div>
                         <form action="#">
                             <p>
-                                <input type="radio" id="test13" name="radio-group" checked>
-                                <label for="test13">In tincidunt, ipsum ut sodales commodo, neque dui rutrum diam, vitae
-                                    tempor tellus erat sit amet ipsum.</label>
+                                <input type="radio" id="test13" name="radio-group" >
+                                <label id="p41" for="test13"></label>
                             </p>
                             <p>
                                 <input type="radio" id="test14" name="radio-group">
-                                <label for="test14">Vivamus egestas molestie neque, tempor imperdiet ligula rutrum
-                                    at.</label>
+                                <label id="p42" for="test14"></label>
                             </p>
                             <p>
                                 <input type="radio" id="test15" name="radio-group">
-                                <label for="test15">Curabitur ac tristique quam.</label>
+                                <label id="p43" for="test15"></label>
                             </p>
-                            <p>
-                                <input type="radio" id="test16" name="radio-group" checked>
-                                <label for="test16">Quisque molestie ultricies libero, vitae gravida nibh dignissim
-                                    quis.</label>
-                            </p>
+
                         </form>
                     </div>
                     <div class="tab5">
-                        <div class="question">
-                            <h4>Sed vel magna at libero lobortis imperdiet in a sem. Morbi libero dui, eleifend vitae
-                                scelerisque sit amet, pretium ac lorem. Vestibulum a nulla massa. Duis bibendum eget
-                                velit
-                                tincidunt tristique. Proin luctus ut urna nec luctus. Cras ac massa condimentum, aliquam
-                                ante vulputate, lacinia leo?</h4>
+                        <div class="question" id ="question5" >
+                            <h4></h4>
                         </div>
                         <form action="#">
                             <p>
-                                <input type="radio" id="test17" name="radio-group" checked>
-                                <label for="test17">In tincidunt, ipsum ut sodales commodo, neque dui rutrum diam, vitae
-                                    tempor tellus erat sit amet ipsum.</label>
+                                <input type="radio" id="test17" name="radio-group" >
+                                <label id="p51" for="test17"></label>
                             </p>
                             <p>
                                 <input type="radio" id="test18" name="radio-group">
-                                <label for="test18">Vivamus egestas molestie neque, tempor imperdiet ligula rutrum
-                                    at.</label>
+                                <label id="p52" for="test18"></label>
                             </p>
                             <p>
                                 <input type="radio" id="test19" name="radio-group">
-                                <label for="test19">Curabitur ac tristique quam.</label>
-                            </p>
-                            <p>
-                                <input type="radio" id="test20" name="radio-group" checked>
-                                <label for="test20">Quisque molestie ultricies libero, vitae gravida nibh dignissim
-                                    quis.</label>
+                                <label id="p53" for="test19"></label>
                             </p>
                         </form>
                     </div>
@@ -193,6 +183,15 @@
         </main>
         <a id="pk2" href="./Resultado.html">Enviar respuestas</a>
     </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>
