@@ -23,11 +23,13 @@ function register() {
             })
                 .then(function (docRef) {
                     console.log("Document written with ID: ", docRef.id);
+                    firebase.storage().ref('image/'+user.uid).put(img);
                     signout();
                     Swal.fire({
                         icon: 'success',
                         title: 'Usuario registrado, ya puede ingresar',
-                    });
+                    })
+                   
                 })
                 .catch(function (error) {
                     console.error("Error adding document: ", error);
@@ -62,6 +64,7 @@ function registerOp() {
         uid: user.uid
     })
         .then(function (docRef) {
+            firebase.storage().ref('image/Operador/'+docRef.id).put(img2);
             console.log("Document written with ID: ", docRef.id);
         })
         .catch(function (error) {
@@ -70,12 +73,15 @@ function registerOp() {
 }
 
 function login() {
+    event.preventDefault();
     var email2 = document.getElementById('emaill').value;
     var password2 = document.getElementById('passwordl').value;
     firebase.auth().signInWithEmailAndPassword(email2, password2)
         .then(function (val) {
-            alert("Autenticacion correcta");
+            var user = firebase.auth().currentUser;
             window.location.href = ('Operadores.html');
+           
+           
 
         }, function (reason) {
             var db = firebase.firestore();
@@ -89,18 +95,19 @@ function login() {
                         // doc.data() is never undefined for query doc snapshots
                         console.log(doc.data().name);
 
-                        if (doc.data().name) {
+                        if (doc.data().name && doc.data().type==1) {
                             window.location.href = ('Cuestionario.html?operator='+doc.id);
-                           
-                           
                         } else {
-                            alert("Fallo en la autenticacion");
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Usuario deshabilitado',
+                            });
                         }
                     });
                     if(!sw){
                         Swal.fire({
                             icon: 'error',
-                            title: 'Usuario no encontrado',
+                            title: 'Usuario o contraseña invalida',
                         });
                     }
                 })
@@ -115,6 +122,7 @@ function obs() {
 
     firebase.auth().onAuthStateChanged(function (user) {
         if (user) {
+            loadimg(user.uid);
             console.log(user.email);
             listar();
             var db = firebase.firestore();
@@ -159,7 +167,8 @@ function listar() {
 }
 function Deleteop() {
     var id = document.getElementById('lista').value;
-    var db = firebase.firestore();
+    if(id){
+        var db = firebase.firestore();
     db.collection("Operator").doc(id).delete()
         .then(function () {
            //listar();
@@ -169,14 +178,39 @@ function Deleteop() {
         .catch(function (error) {
             alert('Error al eliminar usuario');
         })
+    }
+}
+function showedit(){
+    var id = document.getElementById('lista').value;
+    if(id){
+        var db = firebase.firestore();
+    let address = document.getElementById('edit4');
+    let email = document.getElementById('edit2');
+    let name = document.getElementById('edit1');
+    let password = document.getElementById('edit3');
+    db.collection("Operator").doc(id)
+            .get()
+            .then(function (doc) {
+                address.value=doc.data().address;
+                email.value=doc.data().email;
+                name.value=doc.data().name;
+                password.value=doc.data().password;
+            })
+            .catch(function (error) {
+                alert('Error');
+            })  
+    }
+    
 }
 function edit() {
-    var address = document.getElementById('edit4').value;
+    var id = document.getElementById('lista').value;
+    if(id){
+        var address = document.getElementById('edit4').value;
     var email = document.getElementById('edit2').value;
     var name = document.getElementById('edit1').value;
     var password = document.getElementById('edit3').value;
 
-    var id = document.getElementById('lista').value;
+    
     var db = firebase.firestore();
     var it = db.collection("Operator").doc(id);
     return it.update({
@@ -193,12 +227,37 @@ function edit() {
             // The document probably doesn't exist.
             console.error("Error updating document: ", error);
         });
+    }
+    
 }
+
+function verfanswer(type){
+    var r1=document.getElementsByName(type);
+    let answer;
+    for(i=0;i<r1.length;i++){
+        if(r1[i].checked){
+            answer=i+1;
+        }
+    }
+    return answer;
+}
+
+
 function preguntas() {
     var db = firebase.firestore();
     var user = firebase.auth().currentUser;
+
+    const r1=verfanswer('answer1');
+    const r2=verfanswer('answer2');
+    const r3=verfanswer('answer3');
+    const r4=verfanswer('answer4');
+    const r5=verfanswer('answer5');
+
+
+
     db.collection("Questions").add({
         Company: user.uid,
+        answer: r1+"|"+r2+"|"+r3+"|"+r4+"|"+r5,
         Question: document.getElementById('quest1').value + "|" + document.getElementById('quest2').value + "|" + document.getElementById('quest3').value + "|" + document.getElementById('quest4').value + "|" + document.getElementById('quest5').value + "|",
         Answer1: document.getElementById('resp1').value + "|" + document.getElementById('resp4').value + "|" + document.getElementById('resp7').value + "|" + document.getElementById('resp10').value + "|" + document.getElementById('resp13').value,
         Answer2: document.getElementById('resp2').value + "|" + document.getElementById('resp5').value + "|" + document.getElementById('resp8').value + "|" + document.getElementById('resp11').value + "|" + document.getElementById('resp14').value,
@@ -315,13 +374,14 @@ function config(){
         db.collection("Operator").doc(s[1])
             .get()
             .then(function (doc) {
-                //console.log(doc.data().uid);
+                loadimgop(doc.id);
                 cuestionario(doc.data().uid);
                 let lista = document.getElementById('prob');
                 lista.innerHTML=doc.data().name;
+                
             })
             .catch(function (error) {
-                alert('Error al eliminar usuario');
+                alert('Error');
             })   
     }
 }
@@ -330,6 +390,100 @@ function close(){
     window.location.href('index.html');
 }
 
+function listener(){
+    document.getElementById("lista").addEventListener("change", update);
+    
+}
+function update(){
+    //console.log(document.getElementById("lista").value);
+    var db = firebase.firestore();
+    db.collection("Operator").doc(document.getElementById("lista").value).get()
+        .then(function(doc) {
+            let lista = document.getElementById('pk22');
+            if(doc.data().type==1){
+                lista.innerHTML='Deshabilitar';
+            }else{
+                lista.innerHTML='Habilitar';
+            }
+        })
+}
+function enable(){
+    const val=document.getElementById("lista").value;
+    const val2=document.getElementById("pk22");
+    
+    //console.log(val2.innerHTML+val);
+    if(val && val2.innerHTML){
+        
+        let Type;
+        if(val2.innerHTML=='Deshabilitar'){
+            Type=0;
+        }else{
+            Type=1;
+        }
+        //console.log(Type);
+        var db = firebase.firestore();
+        var it = db.collection("Operator").doc(val);
+        return it.update({
+            type: Type
+        })
+            .then(function () {
+               // listar();
+                console.log("Document successfully updated!");
+            })
+            .catch(function (error) {
+                // The document probably doesn't exist.
+                console.error("Error updating document: ", error);
+            });
 
+    }
+}
 
+function draw(){
+    google.charts.load("current", {packages:["corechart"]});
+    google.charts.setOnLoadCallback(drawChart);
+}
+function drawChart() {
+    var data = google.visualization.arrayToDataTable([
+      ['Task', 'Resultados'],
+      ['Acertado',     4],
+      ['Equivocado',   1]
+    ]);
 
+    var options = {
+      title: 'Resultados',
+      width: 470,
+      height:400,
+      is3D: true,
+    };
+
+    var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
+    chart.draw(data, options);
+  }
+
+var img;
+function saveimg(event){
+   img= event.target.files[0];
+}
+
+function loadimg(doc){
+    firebase.storage().ref().child('image/'+doc).getDownloadURL().then(function(url) {
+        const img2 = document.getElementById('imgnav');
+        img2.src=url;
+    }).catch(function(err){
+        console.log(err);
+    });
+}
+
+var img2;
+function saveimgop(){
+    img2=event.target.files[0];
+}
+
+function loadimgop(doc){
+    firebase.storage().ref().child('image/Operador/'+doc).getDownloadURL().then(function(url) {
+        const img3 = document.getElementById('imgnavop');
+        img3.src=url;
+    }).catch(function(err){
+        console.log(err);
+    });
+}

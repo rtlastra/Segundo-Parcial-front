@@ -13,6 +13,7 @@
     <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-storage.js"></script>
 
 
     <!-- TODO: Add SDKs for Firebase products that you want to use
@@ -64,7 +65,7 @@
                         <div id="button">
                             <a href="#" onclick="login()" id="pk3"> Ingresar </a>
                         </div>
-                        <a id="pk" data-toggle="modal" data-target="#exampleModal">Olvido su contraseña?</a>
+                        <a id="pk"  data-toggle="modal" data-target="#exampleModal">Olvido su contraseña?</a>
                     </div>
                     <div class="tab2">
 
@@ -82,7 +83,7 @@
                         <input type="password" id="passwordr" class="fadeIn third" name="login"
                             placeholder="Contraseña">
                         <h3>Imagen de la empresa</h3>
-                        <input type="file" accept=".png, .jpg" id="imagenr" class="fadeIn third"
+                        <input type="file" onchange="saveimg(event)" accept=".png, .jpg" id="imagenr" class="fadeIn third"
                             name="imagen de la empresa" placeholder="imagen de la empresa">
                         <div id="button">
                             <a href="#" onclick="register()" id="pk3"> Registrar</a>
@@ -99,7 +100,7 @@
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Recuperas Contraseña</h5>
+                        <h5 class="modal-title" id="exampleModalLabel">Recuperar Contraseña</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
