@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="./Estilos/style3.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 
     <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-auth.js"></script>
@@ -89,15 +90,15 @@
                         </div>
                         <form action="#">
                             <p>
-                                <input type="radio" id="test1" name="radio-group" >
+                                <input type="radio" id="test1" name="radio-group1" >
                                 <label id="p11" for="test1"></label>
                             </p>
                             <p>
-                                <input type="radio" id="test2" name="radio-group">
+                                <input type="radio" id="test2" name="radio-group1">
                                 <label id="p12" for="test2"></label>
                             </p>
                             <p>
-                                <input type="radio" id="test3" name="radio-group">
+                                <input type="radio" id="test3" name="radio-group1">
                                 <label id="p13" for="test3"></label>
                             </p>
                         </form>
@@ -108,15 +109,15 @@
                         </div>
                         <form action="#">
                             <p>
-                                <input type="radio" id="test5" name="radio-group" >
+                                <input type="radio" id="test5" name="radio-group2" >
                                 <label id="p21"for="test5"></label>
                             </p>
                             <p>
-                                <input type="radio" id="test6" name="radio-group">
+                                <input type="radio" id="test6" name="radio-group2">
                                 <label id="p22" for="test6"></label>
                             </p>
                             <p>
-                                <input type="radio" id="test7" name="radio-group">
+                                <input type="radio" id="test7" name="radio-group2">
                                 <label id="p23" for="test7"></label>
                             </p>
 
@@ -128,15 +129,15 @@
                         </div>
                         <form action="#">
                             <p>
-                                <input type="radio" id="test9" name="radio-group" >
+                                <input type="radio" id="test9" name="radio-group3" >
                                 <label id="p31" for="test9"></label>
                             </p>
                             <p>
-                                <input type="radio" id="test10" name="radio-group">
+                                <input type="radio" id="test10" name="radio-group3">
                                 <label id="p32" for="test10"></label>
                             </p>
                             <p>
-                                <input type="radio" id="test11" name="radio-group">
+                                <input type="radio" id="test11" name="radio-group3">
                                 <label id="p33" for="test11"></label>
                             </p>
 
@@ -149,15 +150,15 @@
                         </div>
                         <form action="#">
                             <p>
-                                <input type="radio" id="test13" name="radio-group" >
+                                <input type="radio" id="test13" name="radio-group4" >
                                 <label id="p41" for="test13"></label>
                             </p>
                             <p>
-                                <input type="radio" id="test14" name="radio-group">
+                                <input type="radio" id="test14" name="radio-group4">
                                 <label id="p42" for="test14"></label>
                             </p>
                             <p>
-                                <input type="radio" id="test15" name="radio-group">
+                                <input type="radio" id="test15" name="radio-group4">
                                 <label id="p43" for="test15"></label>
                             </p>
 
@@ -169,15 +170,15 @@
                         </div>
                         <form action="#">
                             <p>
-                                <input type="radio" id="test17" name="radio-group" >
+                                <input type="radio" id="test17" name="radio-group5" >
                                 <label id="p51" for="test17"></label>
                             </p>
                             <p>
-                                <input type="radio" id="test18" name="radio-group">
+                                <input type="radio" id="test18" name="radio-group5">
                                 <label id="p52" for="test18"></label>
                             </p>
                             <p>
-                                <input type="radio" id="test19" name="radio-group">
+                                <input type="radio" id="test19" name="radio-group5">
                                 <label id="p53" for="test19"></label>
                             </p>
                         </form>
@@ -185,7 +186,7 @@
                 </section>
             </div>
         </main>
-        <a id="pk2" href="./Resultado.html">Enviar respuestas</a>
+        <a id="pk2" href="#" onclick="saveanswer()">Enviar respuestas</a>
     </div>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"

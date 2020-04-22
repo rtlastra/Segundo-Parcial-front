@@ -41,16 +41,19 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light" style="margin-bottom: 45px;">
-        <a class="navbar-brand" href="#">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" style="margin-bottom: 45px; height: 65px;">
+        <li class="nav-item dropdown" style="color: transparent;">
+        <a class="navbar-brand"data-toggle="dropdown" href="#">
             <img id="imgnav" width="50" height="50" style="border-radius: 100%;" class="d-inline-block align-top" alt="">
           </a>
-        <a class="navbar-brand" href="#" id="prob"></a>
+          <div class="dropdown-menu dropdown-secondary" id="ntf" style="font-size: 11px;" >
+          </div>
+        </li>
+          <p class="navbar-brand" id="prob" style="margin-top: 10px;"></p>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
@@ -90,8 +93,8 @@
                         <div id="class1">
                             <form onsubmit="registerOp()">
                                 <input type="text" id="1" class="fadeIn second" name="Usuario" placeholder="Nombre"
-                                    required />
-                                <input type="text" id="2" class="fadeIn second" name="Usuario" placeholder="Email"
+                                    required/>
+                                <input type="email" id="2" class="fadeIn second" name="Usuario" placeholder="Email" style=" background-color: #f6f6f6;border: none;color: #0d0d0d;padding: 10px;text-decoration: none;display: block;font-size: 16px;margin-left: 10%;margin-bottom: 8%;width: 80%;border-radius: 5px 5px 5px 5px;"
                                     required />
                                 <input type="password" id="3" class="fadeIn third" name="login" placeholder="Contraseña"
                                     required />
@@ -99,7 +102,6 @@
                                     required />
                                 <button type="submit" style="margin-left: 150%;" class="btn btn-secondary"
                                     href="#">Registrar</button>
-                            </form>
                         </div>
                         <div id="class2" style=" width: 300px; margin-left: 8%;">
 
@@ -108,10 +110,11 @@
                             </div>
                             <div class="custom-file">
                                 <input type="file" class="custom-file-input" id="inputGroupFile01" onchange="saveimgop(event)"
-                                  aria-describedby="inputGroupFileAddon01">
+                                  aria-describedby="inputGroupFileAddon01" required />
                                 <label class="custom-file-label" for="inputGroupFile01">Seleccione imagen</label>
                               </div>
                         </div>
+                    </form>
                     </div>
                 </div>
                 <div class="tab2">
@@ -126,8 +129,7 @@
                         <button id="pk2" class="btn btn-secondary" href="#" onclick="Deleteop()">Eliminar
                             Operador</button>
                         <button id="pk22" class="btn btn-secondary" href="#" onclick="enable()">Deshabilitar</button>
-                        <button id="pk2" class="btn btn-secondary" href="#" onclick="draw()" data-toggle="modal"
-                            data-target="#exampleModal2">Resultados</button>
+                        <button id="pk2" class="btn btn-secondary" href="#" onclick="draw()">Resultados</button>
                         <button id="pk2" class="btn btn-secondary" href="#" onclick="showedit()" data-toggle="modal"
                             data-target="#exampleModal">Editar</button>
                     </div>
@@ -169,6 +171,9 @@
                                             <input class="resp" type="text" id="resp3" class="fadeIn second" name="resp"
                                                 placeholder="Opcion C">
                                         </div>
+                                        
+                                        <input class="valor" type="number" id="val1" class="fadeIn second" name="resp"
+                                        placeholder="Valor" style="width: 200px; border-radius: 5px;height: 30px;margin-left: 46px;margin-bottom: 0%;border: 1px solid gray; text-align: center;">
 
                                     </div>
                                     <div class="tab-pane" id="b">
@@ -196,7 +201,10 @@
                                                     <input class="resp" type="text" id="resp6" class="fadeIn second" name="resp"
                                                         placeholder="Opcion C">
                                                 </div>
+                                                <input class="valor" type="number" id="val2" class="fadeIn second" name="resp"
+                                        placeholder="Valor" style="width: 200px; border-radius: 5px;height: 30px;margin-left: 46px;margin-bottom: 0%;border: 1px solid gray; text-align: center;">
                                         </div>
+                                        
                                     </div>
                                     <div class="tab-pane" id="c">
                                         <textarea class="quest" id="quest3"
@@ -222,6 +230,8 @@
                                                 <input class="resp" type="text" id="resp9" class="fadeIn second" name="resp"
                                                     placeholder="Opcion C">
                                             </div>
+                                            <input class="valor" type="number" id="val3" class="fadeIn second" name="resp"
+                                            placeholder="Valor" style="width: 200px; border-radius: 5px;height: 30px;margin-left: 46px;margin-bottom: 0%;border: 1px solid gray; text-align: center;">
                                     </div>
                                     <div class="tab-pane" id="d">
                                         <textarea class="quest" id="quest4"
@@ -247,6 +257,8 @@
                                                 <input class="resp" type="text" id="resp12" class="fadeIn second" name="resp"
                                                     placeholder="Opcion C">
                                             </div>
+                                            <input class="valor" type="number" id="val4" class="fadeIn second" name="resp"
+                                            placeholder="Valor" style="width: 200px; border-radius: 5px;height: 30px;margin-left: 46px;margin-bottom: 0%;border: 1px solid gray; text-align: center;">
                                     </div>
                                     <div class="tab-pane" id="e">
                                         <textarea class="quest" id="quest5"
@@ -272,6 +284,8 @@
                                                 <input class="resp" type="text" id="resp15" class="fadeIn second" name="resp"
                                                     placeholder="Opcion C">
                                             </div>
+                                            <input class="valor" type="number" id="val5" class="fadeIn second" name="resp"
+                                            placeholder="Valor" style="width: 200px; border-radius: 5px;height: 30px;margin-left: 46px;margin-bottom: 0%;border: 1px solid gray; text-align: center;">
                                     </div>
                                 </div>
 
@@ -325,6 +339,7 @@
                     <div id="piechart_3d" style="width: 470px; height: 450px;"></div>
                 </div>
                 <div class="modal-footer">
+                    <button type="button" onclick="resettest()" class="btn btn-primary">Reiniciar test</button>
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
                 </div>
             </div>

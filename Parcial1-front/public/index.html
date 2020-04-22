@@ -38,8 +38,8 @@
 <body>
     <div class="background"></div>
     <div id="principal">
-        <h2>Gasoducto del Caribe</h2>
-        <form id="login">
+        <h2>Gasoducto</h2>
+        <div id="login">
             <div class="pc-tab">
                 <input checked="checked" id="tab1" type="radio" name="pct" />
                 <input id="tab2" type="radio" name="pct" />
@@ -55,44 +55,60 @@
                 </nav>
                 <section>
                     <div class="tab1">
-                        <input type="text" id="emaill" class="fadeIn second" name="Usuario" placeholder="Usuario">
-                        <input type="password" id="passwordl" class="fadeIn third" name="login"
-                            placeholder="Contraseña">
-                        <div id="check">
-                            <input type="checkbox" name="remember" id="remember">
-                            <label for="remember" id="pk2">Recuerdame</label>
-                        </div>
-                        <div id="button">
-                            <a href="#" onclick="login()" id="pk3"> Ingresar </a>
-                        </div>
-                        <a id="pk"  data-toggle="modal" data-target="#exampleModal">Olvido su contraseña?</a>
+                            <input type="email" id="emaill" class="fadeIn second" name="Usuario" placeholder="Usuario"style="background-color: #f6f6f6;border: none;color: #0d0d0d;padding: 10px;text-decoration: none;display: block;font-size: 16px;margin: 30px 0;width: 100%;border-radius: 5px 5px 5px 5px;"required />
+                            <input type="password" id="passwordl" class="fadeIn third" name="login"
+                                placeholder="Contraseña"required />
+                            <div id="check">
+                                <input type="checkbox" name="remember" id="remember">
+                                <label for="remember" id="pk2">Recuerdame</label>
+                            </div>
+                            <div id="button">
+                                <button type="submit" onclick="login()" href="#" id="pk3"> Ingresar </button>
+                            </div>
+                            <a id="pk" data-toggle="modal" data-target="#exampleModal">Olvido su contraseña?</a>
                     </div>
+
+
+
                     <div class="tab2">
+                        <form onsubmit="register(event)">
+                            <input type="text" id="Representanter" class="fadeIn second" name="Representante"
+                                placeholder="Representante" required />
+                            <select class="custom-select" id="TipoDr" name="Tipo de Documento">
+                                <option value="C.C">C.C</option>
+                                <option value="C.E">C.E</option>
+                                <option value="T.I">T.I</option>
+                            </select>
+                            <input type="number" id="Documentor" class="fadeIn second" name="Numero de Documento"
+                                placeholder="Numero de Documento"
+                                style="background-color: #f6f6f6;border: none;color: #0d0d0d;padding: 10px;text-decoration: none;display: block;font-size: 16px;margin: 30px 0;width: 100%;border-radius: 5px 5px 5px 5px;"
+                                required />
+                            <input type="email" id="emailr" class="fadeIn second" name="Correo electronico"
+                                placeholder="E-mail"
+                                style="background-color: #f6f6f6;border: none;color: #0d0d0d;padding: 10px;text-decoration: none;display: block;font-size: 16px;margin: 30px 0;width: 100%;border-radius: 5px 5px 5px 5px;"
+                                required />
+                            <input type="text" id="Nombrer" class="fadeIn second" name="Nombre de la Empresa"
+                                placeholder="Nombre de la Empresa" required />
+                            <input type="number" id="telefonor" class="fadeIn second" name="Telefono"
+                                placeholder="Télefono"
+                                style="background-color: #f6f6f6;border: none;color: #0d0d0d;padding: 10px;text-decoration: none;display: block;font-size: 16px;margin: 30px 0;width: 100%;border-radius: 5px 5px 5px 5px;"
+                                required />
+                            <input type="password" id="passwordr" class="fadeIn third" name="login"
+                                placeholder="Contraseña" required />
 
-                        <input type="text" id="Representanter" class="fadeIn second" name="Representante"
-                            placeholder="Representante">
-                        <input type="text" id="TipoDr" class="fadeIn second" name="Tipo de Documento"
-                            placeholder="Tipo de Documento">
-                        <input type="text" id="Documentor" class="fadeIn second" name="Numero de Documento"
-                            placeholder="Numero de Documento">
-                        <input type="text" id="emailr" class="fadeIn second" name="Correo electronico"
-                            placeholder="E-mail">
-                        <input type="text" id="Nombrer" class="fadeIn second" name="Nombre de la Empresa"
-                            placeholder="Nombre de la Empresa">
-                        <input type="text" id="telefonor" class="fadeIn second" name="Telefono" placeholder="Télefono">
-                        <input type="password" id="passwordr" class="fadeIn third" name="login"
-                            placeholder="Contraseña">
-                        <h3>Imagen de la empresa</h3>
-                        <input type="file" onchange="saveimg(event)" accept=".png, .jpg" id="imagenr" class="fadeIn third"
-                            name="imagen de la empresa" placeholder="imagen de la empresa">
-                        <div id="button">
-                            <a href="#" onclick="register()" id="pk3"> Registrar</a>
-                        </div>
-
+                                <div class="custom-file" style="margin-bottom: 17px;">
+                                    <input type="file" class="custom-file-input" id="inputGroupFile01" onchange="saveimg(event)"
+                                      aria-describedby="inputGroupFileAddon01" required />
+                                    <label class="custom-file-label" for="inputGroupFile01">Seleccione imagen</label>
+                                  </div>
+                            <div id="button">
+                                <button type="submit" href="#" id="pk3"> Registrar</button>
+                            </div>
+                        </form>
                     </div>
                 </section>
             </div>
-        </form>
+        </div>
 
         <!-- Modal -->
         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
@@ -110,7 +126,8 @@
 
                     </div>
                     <div class="modal-footer">
-                        <button type="button" onclick="rcuppass()" class="btn btn-primary" data-dismiss="modal">Guardar</button>
+                        <button type="button" onclick="rcuppass()" class="btn btn-primary"
+                            data-dismiss="modal">Guardar</button>
                     </div>
                 </div>
             </div>
