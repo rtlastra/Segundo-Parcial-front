@@ -182,16 +182,19 @@ function ntfcation(){
     var user = firebase.auth().currentUser;
     var db = firebase.firestore();
     let lista = document.getElementById('ntf');
-
+    let ntf=document.getElementById('nnoti');
     db.collection("Notifications").where("uid", "==", user.uid)
         .onSnapshot((querySnapshot) => {
+            ntf.innerHTML='';
+            let cont=0;
             lista.innerHTML = '';
             querySnapshot.forEach(function (doc) {
                 // doc.data() is never undefined for query doc snapshots
                 // console.log(doc.data().name);
                 lista.innerHTML += `<a class="dropdown-item" href="#">${doc.data().notification}</a>`
-                
+                cont++;
             });
+            ntf.innerHTML=cont.toString();
         })
 }
 function listar() {
@@ -561,16 +564,17 @@ function resettest() {
         })
 
 }
+let idprub;
 function draw() {
 
     var id = document.getElementById('lista').value;
+    idprub=id;
     if (id) {
         var db = firebase.firestore();
         db.collection('Operator').doc(id).get()
             .then(function (doc) {
                 if (doc.data().exam == true) {
-                    google.charts.load("current", { packages: ["corechart"] });
-                    google.charts.setOnLoadCallback(drawChart(id));
+                    google.charts.load('current', {callback: drawChart(),packages: ['corechart']});
                     $('#exampleModal2').modal('show');
                 } else {
                     Swal.fire({
@@ -584,10 +588,10 @@ function draw() {
             })
     }
 }
-function drawChart(id) {
+function drawChart() {
 
     var db = firebase.firestore();
-    db.collection("Operator").doc(id)
+    db.collection("Operator").doc(idprub)
         .get()
         .then(function (doc) {
             let email = doc.data().email;
@@ -602,9 +606,9 @@ function drawChart(id) {
                             ['Equivocado', doc.data().bad]
                         ]);
                         var options = {
-                            title: 'Calificación operador ' + name + ' fue ' + doc.data().result,
+                            title: 'Calificación operador ' + name.toUpperCase() + ' es: ' + doc.data().result,
                             width: 470,
-                            height: 400,
+                            height: 460,
                             is3D: true,
                         };
 
